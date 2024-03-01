@@ -10,7 +10,7 @@ var phoneNumber = '+9720537301993';
 var linkedInURL = 'https://www.linkedin.com/in/yechezkel-matlin';
 var gitLabURL = 'https://gitlab.com/cymatlin';
 var githubURL = 'https://github.com/matlin100';
-var portfolioURL = 'https://matlin100.github.io/Chezky-Matlin-Portfolio-html/html/index.html';
+var portfolioURL = 'https://matlin100.github.io/Chezky-Matlin-Portfolio/';
   /*=========================================================================
       Preloader
   =========================================================================*/
