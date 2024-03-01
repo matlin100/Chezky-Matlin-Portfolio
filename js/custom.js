@@ -1,3 +1,8 @@
+$(document).ready(function() {
+    // Hide the preloader after a delay
+    $("#preloader").delay(350).fadeOut('slow');
+});
+
 $(window).on("load", function() {
   "use strict";
   var emailAddress = 'cymatlin@gmail.com';
@@ -477,8 +482,5 @@ document.addEventListener('DOMContentLoaded', function() {
     // Start observing the target video element
     observer.observe(video);
 });
-$(document).ready(function() {
-    // Hide the preloader after a delay
-    $("#preloader").delay(350).fadeOut('slow');
-});
+
 
