@@ -436,3 +436,45 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('daysToRelease').textContent = daysToRelease;
   document.getElementById('daysFromStart').textContent = daysFromStart;
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var observer;
+    var videoSection = document.getElementById('video');
+    var video = videoSection.querySelector('.video-container');
+
+    // Options for the observer (which parts of the screen the video needs to be in to start playing)
+    var options = {
+        root: null, // sets the framing element to the viewport
+        rootMargin: '0px',
+        threshold: 0.25 // 25% of the video must be in view to start
+    };
+
+    // Callback function to execute when changes are observed
+    var callback = function(entries, observer) {
+        entries.forEach(entry => {
+            // Each entry describes an intersection change for one observed
+            // target element:
+            // If video is visible enough, play it; otherwise, pause
+            if (entry.isIntersecting) {
+                video.play().catch(error => {
+                    // Autoplay with sound was prevented.
+                    // Show a UI element to let the user manually start playback or remove the mute attribute to attempt playing muted
+                    console.error("Autoplay with sound was prevented.");
+                    // Optionally, you can prompt the user to click to play
+                    video.muted = true; // Attempt to play muted if autoplay with sound fails
+                    video.play(); // You can try to play it again after setting it to mute
+                });
+            } else {
+                video.pause();
+            }
+        });
+    };
+
+    // Create an intersection observer instance linked to the callback function
+    observer = new IntersectionObserver(callback, options);
+
+    // Start observing the target video element
+    observer.observe(video);
+});
