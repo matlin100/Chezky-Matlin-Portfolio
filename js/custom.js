@@ -101,11 +101,11 @@ $('.social-icons a').each(function() {
 
   // Populate skills
   const skills = [
-      'React', 'Angular', 'Bootstrap', 'Material-UI',
-      'Node.js', 'Python', 'Java', 'C', 'API Development',
-      'Git', 'GitLab', 'Jenkins', 'Local Servers', 'Azure',
-      'Switch Configuration', 'AD', 'DHCP', 'vSphere'
-  ];
+    'Node.js', 'React', 'React Native & Expo', 'Next.js', 'TypeScript',
+    'SQL / PostgreSQL / MongoDB', 'AWS', 'Azure', 'Firebase', 'Docker',
+    'Terraform', 'Pulumi', 'CI/CD', 'Git (GitHub, GitLab)', 'LLMs / AI integration',
+    'Java', 'C', 'Python'
+];
 
   skills.forEach(skill => {
       $('.skill-container').append(
